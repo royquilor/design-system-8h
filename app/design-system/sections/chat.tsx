@@ -194,4 +194,4 @@ export function ChatSection() {
       </div>
     </div>
   )
-} 
+}
