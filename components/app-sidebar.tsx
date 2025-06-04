@@ -52,6 +52,10 @@ const data = {
           url: "/forms",
         },
         {
+          title: "AI Chat UI",
+          url: "/ai-chat",
+        },
+        {
           title: "Navigation",
           url: "/navigation",
         },
