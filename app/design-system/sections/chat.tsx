@@ -5,6 +5,7 @@
 import { cn } from "@/lib/utils"
 import { Bookmark, Download, Copy, Loader2 } from "lucide-react"
 import React, { useRef, useState, useEffect } from "react"
+import { AgentStatusBanner } from "@/components/ui/agent-status-banner"
 
 // Message bubble component
 function MessageBubble({ sender, content, timestamp, isUser }: {
@@ -44,16 +45,6 @@ function MessageBubble({ sender, content, timestamp, isUser }: {
           )}
         </div>
       </div>
-    </div>
-  )
-}
-
-// Agent state/tool usage indicator component
-function AgentIndicator({ state, tool }: { state: string; tool?: string }) {
-  return (
-    <div className="flex items-center gap-2 text-xs text-muted-foreground mb-2 animate-pulse">
-      <Loader2 className="w-4 h-4 animate-spin" />
-      <span>AI is {state}{tool ? `: ${tool}` : "…"}</span>
     </div>
   )
 }
@@ -157,7 +148,13 @@ function ChatDemo() {
         <div ref={messagesEndRef} />
       </div>
       {/* Agent state/tool usage indicator */}
-      {agentState && <AgentIndicator state={agentState.state} tool={agentState.tool} />}
+      {agentState && (
+        <AgentStatusBanner
+          status={agentState.state}
+          message={`AI is ${agentState.state}`}
+          tool={agentState.tool}
+        />
+      )}
       {/* Modern textarea input with docked send button */}
       <div className="mt-4 relative flex">
         <textarea

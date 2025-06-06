@@ -56,12 +56,20 @@ const data = {
           url: "/ai-chat",
         },
         {
+          title: "Agents",
+          url: "/agents",
+        },
+        {
           title: "Navigation",
           url: "/navigation",
         },
         {
           title: "Feedback",
           url: "/feedback",
+        },
+        {
+          title: "Agent Status Messages",
+          url: "/agent-status",
         },
       ],
     },
